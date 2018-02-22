@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   	this.currentQuestion = questions[this.questionIndex];
-  	console.log(this.currentQuestion);
   }
 
   nextQuestion() {
@@ -25,13 +24,13 @@ export class AppComponent implements OnInit {
   }
 
   getRandomQuestion() {
-    this.questionIndex = Math.floor(Math.random() * Math.floor(questions.length));
+    this.questionIndex = Math.floor(Math.random() * Math.floor(459));
     this.getQuestion(this.questionIndex);
   }
 
   getQuestion(index: number) {
 	  // TODO: display errmsg if out of bounds
-    if (index < 0 || index >= questions.length) {
+    if (index < 0 || index >= 459) {
       this.questionIndex = 0;
     }
   	
