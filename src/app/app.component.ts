@@ -11,7 +11,7 @@ import * as finance_questions from '../assets/finance_questions.json';
 export class AppComponent implements OnInit {
 
   currentQuestion: any;
-  questionIndex: number;
+  questionIndex: number = 0;
   questionSet: number = 0;
 
   displayAnswer: boolean = false;
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   questions: Array<any> = [this.ml_questions.concat(this.finance_questions), finance_questions, questions]
 
   ngOnInit() {
-    this.getRandomQuestion()
+    this.currentQuestion = this.questions[0][0];
   }
 
   nextQuestion() {
