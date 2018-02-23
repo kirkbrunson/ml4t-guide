@@ -15,8 +15,14 @@
 				</ul>
 			</div>
 
+			<div *ngIf="displayAnswer">
+				<h5>Explanation:</h5>
+				<hr>
+				<p>{{currentQuestion.why}}</p>
+			</div>
+
 		<a href="#" (click)="toggleAnswer()" class="btn btn-success">{{answerStatus}} Answer</a>
-		<br>
+		<br class="mobile">
 		<a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a> <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
 		
 		</div>
