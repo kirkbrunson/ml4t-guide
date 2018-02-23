@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="card">
 		<div class="card-header">
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs col-10">
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(0)" class="nav-link" [ngClass]="{'active': questionSet==0}" href="#">All Questions</a>
 			  </li>
@@ -17,7 +17,9 @@
 		</div>
 		<div class="card-body">
 			<h5 class="card-title">{{currentQuestion.question}}</h5>
-			<h6 *ngIf="currentQuestion.chapter" class="card-subtitle mb-2 text-muted">{{currentQuestion.chapter}}</h6>
+			<h6 class="card-subtitle mb-2 text-muted">Question {{questionIndex}} of {{questions[questionSet].length}}
+				<span *ngIf="currentQuestion.chapter" class="card-subtitle mb-2 text-muted">: {{currentQuestion.chapter}}</span>
+			</h6>
 			<hr>
 			<div class="options">
 				<ul>
