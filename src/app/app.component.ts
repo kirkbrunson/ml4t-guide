@@ -11,12 +11,18 @@ import * as finance_questions from '../assets/finance_questions.json';
 export class AppComponent implements OnInit {
 
   currentQuestion: any;
-  questionIndex: number = 0;
+  questionIndex: number;
+  questionSet: number = 0;
+
   displayAnswer: boolean = false;
-  answerStatus: string = 'Show';
+  answerStatus: string = 'Show';  
+
+  ml_questions: any = JSON.parse(JSON.stringify(questions));
+  finance_questions: any = JSON.parse(JSON.stringify(finance_questions));
+  questions: Array<any> = [this.ml_questions.concat(this.finance_questions), finance_questions, questions]
 
   ngOnInit() {
-  	this.currentQuestion = questions[this.questionIndex];
+    this.getRandomQuestion()
   }
 
   nextQuestion() {
@@ -25,18 +31,18 @@ export class AppComponent implements OnInit {
   }
 
   getRandomQuestion() {
-    this.questionIndex = Math.floor(Math.random() * Math.floor(459));
+    this.questionIndex = Math.floor(Math.random() * Math.floor(this.questions[this.questionSet].length));
     this.getQuestion(this.questionIndex);
   }
 
   getQuestion(index: number) {
 	  // TODO: display errmsg if out of bounds
-    if (index < 0 || index >= 459) {
+    if (index < 0 || index >= this.questions[this.questionSet].length) {
       this.questionIndex = 0;
     }
   	
   	this.questionIndex = index;
-  	this.currentQuestion = questions[index]
+  	this.currentQuestion = this.questions[this.questionSet][index]
   	this.displayAnswer = false;
     this.answerStatus = this.displayAnswer ? 'Hide' : 'Show';
   }
@@ -44,6 +50,11 @@ export class AppComponent implements OnInit {
   toggleAnswer() {
   	this.displayAnswer = !this.displayAnswer;
   	this.answerStatus = this.displayAnswer ? 'Hide' : 'Show';
+  }
+
+  toggleQuestions(id: number) {
+    this.questionSet = id;
+    this.getQuestion(0);
   }
 
 }

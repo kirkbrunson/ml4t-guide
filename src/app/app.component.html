@@ -2,6 +2,19 @@
 
 <div class="container">
 	<div class="card">
+		<div class="card-header">
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <a (click)="toggleQuestions(0)" class="nav-link" [ngClass]="{'active': questionSet==0}" href="#">All Questions</a>
+			  </li>
+			  <li class="nav-item">
+			    <a (click)="toggleQuestions(1)" class="nav-link" [ngClass]="{'active': questionSet==1}" href="#">Finance</a>
+			  </li>
+			  <li class="nav-item">
+			    <a (click)="toggleQuestions(2)" class="nav-link" [ngClass]="{'active': questionSet==2}" href="#">Machine Learning</a>
+			  </li>
+			</ul>
+		</div>
 		<div class="card-body">
 			<h5 class="card-title">{{currentQuestion.question}}</h5>
 			<h6 *ngIf="currentQuestion.chapter" class="card-subtitle mb-2 text-muted">{{currentQuestion.chapter}}</h6>
