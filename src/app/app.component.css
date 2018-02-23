@@ -9,3 +9,9 @@
 .btn {
 	margin-top: 1%;
 }
+
+@media (min-width: 576px) { 
+	.mobile {
+		display: none;
+	}
+}
