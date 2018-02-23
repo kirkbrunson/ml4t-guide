@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as questions from '../assets/ml4t_questions.json';
+import * as questions from '../assets/ml_questions.json';
+import * as finance_questions from '../assets/finance_questions.json';
 
 @Component({
   selector: 'app-root',
