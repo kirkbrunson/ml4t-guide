@@ -13,6 +13,9 @@
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(2)" class="nav-link" [ngClass]="{'active': questionSet==2}" href="#">Machine Learning</a>
 			  </li>
+        <li class="nav-item" *ngIf="questions[3].length > 0">
+			    <a (click)="toggleQuestions(3)" class="nav-link" [ngClass]="{'active': questionSet==3}" href="#">Needs Review</a>
+			  </li>
 			</ul>
 		</div>
 		<div class="card-body">
@@ -21,6 +24,7 @@
 				<span *ngIf="currentQuestion.chapter" class="card-subtitle mb-2 text-muted">: {{currentQuestion.chapter}}</span>
 			</h6>
 			<hr>
+
 			<div class="card-text">
 				<ul class="options-list">
 		          <li class="option" [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='A',
@@ -55,17 +59,20 @@
 			</div>
 
 
-	      <br class="mobile">
-	      <a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a>
-	      <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
-	      
-	      <div class="explanation" *ngIf="displayAnswer">
-	        <div>
-	          <h5>Explanation:</h5>
-	          <hr>
-	          <p>{{currentQuestion.why}}</p>
-	        </div>
-	      </div>
+
+      <br class="mobile">
+      <a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a>
+      <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
+      <a href="#" (click)="clearReviewQuestions()" class="btn btn-outline-primary" *ngIf="questionSet===3">Clear Review Questions</a>
+      <br class="mobile" />
+      <br class="mobile" />
+      <div class="" *ngIf="displayAnswer">
+        <div>
+          <h5>Explanation:</h5>
+          <hr>
+          <p>{{currentQuestion.why}}</p>
+        </div>
+      </div>
 
 		</div>
 	</div>
