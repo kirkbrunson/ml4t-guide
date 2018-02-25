@@ -63,6 +63,7 @@
       <br class="mobile">
       <a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a>
       <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
+      <a href="#" (click)="shuffleQuestions(questionSet)" class="btn btn-outline-primary">Shuffle Question Set</a>
       <a href="#" (click)="clearReviewQuestions()" class="btn btn-outline-primary" *ngIf="questionSet===3">Clear Review Questions</a>
 
       <div class="explanation" *ngIf="displayAnswer">
