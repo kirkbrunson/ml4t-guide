@@ -242,7 +242,7 @@
  {
    "index": 24,
    "question": "Which one is correct?  ",
-   "A": "The outfitting is more likely happens when the training set is small.  ",
+   "A": "The overfitting is more likely happens when the training set is small.",
    "B": "Boosting have an advantage that it will not be outfitting.",
    "C": "There are two regression function A and B, if A is simple than B, A must have a better performance than B on testing set.",
    "D": "Given a data set of n nodes, half for training and half for testing, the error between the training result and the testing result will become smaller when n becomes smaller",
