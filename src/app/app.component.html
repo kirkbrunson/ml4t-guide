@@ -13,6 +13,9 @@
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(2)" class="nav-link" [ngClass]="{'active': questionSet==2}" href="#">Machine Learning</a>
 			  </li>
+        <li class="nav-item bg-warning" *ngIf="questions[3].length > 0">
+			    <a (click)="toggleQuestions(3)" class="nav-link" [ngClass]="{'active': questionSet==3}" href="#">Needs Review</a>
+			  </li>
 			</ul>
 		</div>
 		<div class="card-body">
@@ -27,28 +30,28 @@
           <li [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='A',
             'alert-danger': displayAnswer && currentQuestion.answer!='A'}">
             <label>
-              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'A'">
+              <input type="radio" name="answer" (click)="submitAnswer('A')" [(ngModel)]="submittedAnswer" [value]="'A'">
               A: {{currentQuestion.A}}
             </label>
           </li>
           <li [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='B',
             'alert-danger': displayAnswer && currentQuestion.answer!='B'}">
             <label>
-              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'B'">
+              <input type="radio" name="answer" (click)="submitAnswer('B')" [(ngModel)]="submittedAnswer" [value]="'B'">
               B: {{currentQuestion.B}}
             </label>
           </li>
           <li  [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='C',
             'alert-danger': displayAnswer && currentQuestion.answer!='C'}">
             <label>
-              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'C'">
+              <input type="radio" name="answer" (click)="submitAnswer('C')" [(ngModel)]="submittedAnswer" [value]="'C'">
               C: {{currentQuestion.C}}
             </label>
           </li>
           <li  [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='D',
             'alert-danger': displayAnswer && currentQuestion.answer!='D'}">
             <label>
-              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'D'">
+              <input type="radio" name="answer" (click)="submitAnswer('D')" [(ngModel)]="submittedAnswer" [value]="'D'">
               D: {{currentQuestion.D}}
             </label>
           </li>
@@ -59,6 +62,7 @@
       <br class="mobile">
       <a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a>
       <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
+      <a href="#" (click)="clearReviewQuestions()" class="btn btn-outline-primary" *ngIf="questionSet===3">Clear Review Questions</a>
       <br class="mobile" />
       <br class="mobile" />
       <div class="" *ngIf="displayAnswer">

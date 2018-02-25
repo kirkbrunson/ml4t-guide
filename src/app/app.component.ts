@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
 
   ml_questions: any = JSON.parse(JSON.stringify(questions));
   finance_questions: any = JSON.parse(JSON.stringify(finance_questions));
-  questions: Array<any> = [this.ml_questions.concat(this.finance_questions), finance_questions, questions]
-  submittedAnswer: null;
+  questions: Array<any> = [this.ml_questions.concat(this.finance_questions), finance_questions, questions, []]
+  submittedAnswer: string | null;
 
   ngOnInit() {
     this.currentQuestion = this.questions[0][0];
@@ -56,6 +56,14 @@ export class AppComponent implements OnInit {
   	if (this.displayAnswer === false) {
   	  this.submittedAnswer = null;
     }
+    if (this.submittedAnswer !== this.currentQuestion.answer && this.questions[3].indexOf(this.currentQuestion) === -1) {
+  	  this.questions[3].push(this.currentQuestion);
+    }
+
+    // if (this.submittedAnswer === this.currentQuestion.answer && this.questionSet === 3) {
+    //   this.questions[3].(this.currentQuestion);
+    // }
+
 
   }
 
@@ -65,4 +73,12 @@ export class AppComponent implements OnInit {
     this.getQuestion(0);
   }
 
+  submitAnswer(answer: string) {
+    this.submittedAnswer = answer;
+    this.toggleAnswer();
+  }
+
+  clearReviewQuestions() {
+    this.questions[3] = [];
+  }
 }
