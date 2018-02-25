@@ -28,7 +28,8 @@ export class AppComponent implements OnInit {
   }
 
   nextQuestion() {
-  	this.questionIndex += 1;
+  	let next = this.questionIndex + 1;
+    this.questionIndex = next < this.questions[this.questionSet].length ? next : 0;
   	this.getQuestion(this.questionIndex);
   }
 
