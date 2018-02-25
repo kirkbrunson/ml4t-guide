@@ -75,5 +75,7 @@ export class AppComponent implements OnInit {
 
   clearReviewQuestions() {
     this.questions[3] = [];
+    this.questionSet = 0;
+    this.getQuestion(0);
   }
 }
