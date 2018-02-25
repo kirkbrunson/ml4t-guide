@@ -60,11 +60,6 @@ export class AppComponent implements OnInit {
   	  this.questions[3].push(this.currentQuestion);
     }
 
-    // if (this.submittedAnswer === this.currentQuestion.answer && this.questionSet === 3) {
-    //   this.questions[3].(this.currentQuestion);
-    // }
-
-
   }
 
   toggleQuestions(id: number) {

@@ -4,11 +4,19 @@
 
 .option {
 	padding: 1%;
+	margin: 1%;
+	border-radius: 8px;
 }
 
-.btn {
-	margin-top: 1%;
+.options-list {
+	margin-left: -40px;
+	list-style-type:none;
 }
+
+.explanation {
+	padding-top: 5%;
+}
+
 
 @media (min-width: 576px) { 
 	.mobile {
