@@ -79,4 +79,14 @@ export class AppComponent implements OnInit {
     this.questionSet = 0;
     this.getQuestion(0);
   }
+
+  shuffleQuestions(questionSet: number) {
+    const a: Array<any> = this.questions[questionSet];
+
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    this.currentQuestion = a[0];
+  }
 }
