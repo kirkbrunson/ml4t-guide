@@ -30,28 +30,28 @@
 		          <li class="option" [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='A',
 		            'alert-danger': displayAnswer && currentQuestion.answer!='A'}">
 		            <label>
-		              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'A'">
+		              <input type="radio" name="answer" (click)="submitAnswer('A')" [(ngModel)]="submittedAnswer" [value]="'A'">
 		              A: {{currentQuestion.A}}
 		            </label>
 		          </li>
 		          <li class="option" [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='B',
 		            'alert-danger': displayAnswer && currentQuestion.answer!='B'}">
 		            <label>
-		              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'B'">
+		              <input type="radio" name="answer" (click)="submitAnswer('B')" [(ngModel)]="submittedAnswer" [value]="'B'">
 		              B: {{currentQuestion.B}}
 		            </label>
 		          </li>
 		          <li class="option" [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='C',
 		            'alert-danger': displayAnswer && currentQuestion.answer!='C'}">
 		            <label>
-		              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'C'">
+		              <input type="radio" name="answer" (click)="submitAnswer('C')" [(ngModel)]="submittedAnswer" [value]="'C'">
 		              C: {{currentQuestion.C}}
 		            </label>
 		          </li>
 		          <li class="option" [ngClass]="{'alert-success': displayAnswer && currentQuestion.answer=='D',
 		            'alert-danger': displayAnswer && currentQuestion.answer!='D'}">
 		            <label>
-		              <input type="radio" name="answer" (click)="toggleAnswer()" [(ngModel)]="submittedAnswer" [value]="'D'">
+		              <input type="radio" name="answer" (click)="submitAnswer('D')" [(ngModel)]="submittedAnswer" [value]="'D'">
 		              D: {{currentQuestion.D}}
 		            </label>
 		          </li>

@@ -51,7 +51,8 @@ export class AppComponent implements OnInit {
     this.submittedAnswer = null;
   }
 
-  toggleAnswer() {
+  submitAnswer(answer: string) {
+    this.submittedAnswer = answer;
   	this.displayAnswer = !this.displayAnswer;
   	this.answerStatus = this.displayAnswer ? 'Hide' : 'Show';
   	if (this.displayAnswer === false) {
@@ -67,11 +68,6 @@ export class AppComponent implements OnInit {
     this.submittedAnswer = null;
     this.questionSet = id;
     this.getQuestion(0);
-  }
-
-  submitAnswer(answer: string) {
-    this.submittedAnswer = answer;
-    this.toggleAnswer();
   }
 
   clearReviewQuestions() {
