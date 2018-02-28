@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   currentQuestion: any;
   questionIndex: number = 0;
   questionSet: number = 0;
+  gotoQuestion: number = 0;
 
   displayAnswer: boolean = false;
   answerStatus: string = 'Show';

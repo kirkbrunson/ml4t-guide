@@ -17,6 +17,14 @@
 	padding-top: 5%;
 }
 
+#gotoQuestionForm {
+	padding-top: 10px;
+	max-width: 65%;
+}
+
+button {
+	margin: 2px;
+}
 
 @media (min-width: 576px) { 
 	.mobile {

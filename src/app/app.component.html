@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="card">
 		<div class="card-header">
-			<ul class="nav nav-tabs col-10">
+			<ul class="nav nav-tabs">
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(0)" class="nav-link" [ngClass]="{'active': questionSet==0}" href="#">All Questions</a>
 			  </li>
@@ -13,7 +13,7 @@
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(2)" class="nav-link" [ngClass]="{'active': questionSet==2}" href="#">Machine Learning</a>
 			  </li>
-        <li class="nav-item" *ngIf="questions[3].length > 0">
+        	  <li class="nav-item" *ngIf="questions[3].length > 0">
 			    <a (click)="toggleQuestions(3)" class="nav-link" [ngClass]="{'active': questionSet==3}" href="#">Needs Review</a>
 			  </li>
 			</ul>
@@ -59,13 +59,22 @@
 			</div>
 
 
-
-      <br class="mobile">
-      <a href="#" (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</a>
-      <a href="#" (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</a>
-      <a href="#" (click)="shuffleQuestions(questionSet)" class="btn btn-outline-primary">Shuffle Question Set</a>
-      <a href="#" (click)="clearReviewQuestions()" class="btn btn-outline-primary" *ngIf="questionSet===3">Clear Review Questions</a>
-
+	  	<div class="col-lg-12">
+	      <br class="mobile">
+	      <button (click)="nextQuestion()" class="btn btn-outline-primary">Next Question</button>
+	      <button (click)="getRandomQuestion()" class="btn btn-outline-primary">Random Question</button>
+	      <button (click)="shuffleQuestions(questionSet)" class="btn btn-outline-primary">Shuffle Question Set</button>
+	      <button (click)="clearReviewQuestions()" class="btn btn-outline-primary" *ngIf="questionSet===3">Clear Review Questions</button>
+		  <form id="gotoQuestionForm">
+			<div class="input-group">
+			   <span class="input-group-btn">
+			   	  <button class="btn btn-outline-primary" (click)="getQuestion(gotoQuestion-1)">Get Question</button>
+			   </span>
+			   <input id="selectQuestion" class="form-control col-lg-6" type="number" name="gotoQuestion" [(ngModel)]="gotoQuestion">
+			</div>
+		  </form>
+		</div>
+	  		
       <div class="explanation" *ngIf="displayAnswer">
         <div>
           <h5>Explanation:</h5>
@@ -74,6 +83,5 @@
         </div>
       </div>
 
-		</div>
 	</div>
 </div>
