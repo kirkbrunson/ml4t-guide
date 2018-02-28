@@ -406,7 +406,7 @@
    "B": "Linear Regression",
    "C": "Support Vector Machines",
    "D": "Neural Network",
-   "answer": "A",
+   "answer": "B",
    "why": "Gold prices are represented by a continuous numerical value, which makes linear regression the answer for this question. The other solutions are classification-based algorithms, which are best suited for discrete variables"
  },
  {
@@ -516,7 +516,7 @@
    "B": "b) Decision tree, since it has the clear advantage of going only through a few branches  ",
    "C": "c) Linear Regression, because calculating a function value can't be beat  ",
    "D": "d) Decision trees and linear regression have in all cases the same lookup speed - since the few tree branch traversals and calculating a function value amount to about the same number of operations    ",
-   "answer": "D",
+   "answer": "C",
    "why": "Correct answer is c) - since calculating a value is scales best towards infinity (always cost of 1)  "
  },
  {
