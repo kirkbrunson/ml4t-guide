@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import * as questions from '../assets/ml_questions.json';
+import * as ml_questions from '../assets/ml_questions.json';
 import * as finance_questions from '../assets/finance_questions.json';
+import * as python_questions from '../assets/python_questions.json';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,10 @@ export class AppComponent implements OnInit {
   displayAnswer: boolean = false;
   answerStatus: string = 'Show';
 
-  ml_questions: any = JSON.parse(JSON.stringify(questions));
+  ml_questions: any = JSON.parse(JSON.stringify(ml_questions));
   finance_questions: any = JSON.parse(JSON.stringify(finance_questions));
-  questions: Array<any> = [this.ml_questions.concat(this.finance_questions), finance_questions, questions, []]
+  python_questions: any = JSON.parse(JSON.stringify(python_questions));
+  questions: Array<any> = [this.ml_questions.concat(this.finance_questions.concat(this.python_questions), finance_questions, ml_questions, python_questions, []]
   submittedAnswer: string | null;
 
   ngOnInit() {
