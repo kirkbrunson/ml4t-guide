@@ -13,8 +13,11 @@
 			  <li class="nav-item">
 			    <a (click)="toggleQuestions(2)" class="nav-link" [ngClass]="{'active': questionSet==2}" href="#">Machine Learning</a>
 			  </li>
+			  <li class="nav-item">
+			    <a (click)="toggleQuestions(3)" class="nav-link" [ngClass]="{'active': questionSet==3}" href="#">Python</a>
+			  </li>
         	  <li class="nav-item" *ngIf="questions[3].length > 0">
-			    <a (click)="toggleQuestions(3)" class="nav-link" [ngClass]="{'active': questionSet==3}" href="#">Needs Review</a>
+			    <a (click)="toggleQuestions(4)" class="nav-link" [ngClass]="{'active': questionSet==4}" href="#">Needs Review</a>
 			  </li>
 			</ul>
 		</div>
