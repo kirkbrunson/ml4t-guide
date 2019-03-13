@@ -3391,7 +3391,7 @@
  },
  {
    "index": 339,
-   "question": "Which of the following is an advantage of a parametric leaner?",
+   "question": "Which of the following is an advantage of a parametric learner?",
    "A": "The model can be queried quickly because it has access to all of the training data.",
    "B": "The model is memory efficient because it only needs to store the parameters and not the training data.",
    "C": "The model can be trained quickly because it requires data sets with a small number of features.",
